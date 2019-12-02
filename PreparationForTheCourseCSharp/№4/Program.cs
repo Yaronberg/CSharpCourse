@@ -10,7 +10,8 @@ namespace _4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine((Console.ReadLine() == "1" ? "Good" : "Bad"));
+            Console.WriteLine("Введите 1 или 0");
+            Console.WriteLine(Console.ReadLine() == "1" ? "Хорошо" : "Плохо");
 
             Console.ReadKey();
         }
