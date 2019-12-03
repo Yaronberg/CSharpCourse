@@ -15,15 +15,15 @@ namespace _3
             {
                 Console.WriteLine("Зима");
             }
-            else if (var == 3 || var == 4 || var == 5)
+            else if (var >= 3 & var <= 5)
             {
                 Console.WriteLine("Весна");
             }
-            else if (var == 6 || var == 7 || var == 8)
+            else if (var >= 6 & var <= 8)
             {
                 Console.WriteLine("Лето");
             }
-            else if (var == 9 || var == 10 || var == 11)
+            else if (var >= 9 & var <= 11)
             {
                 Console.WriteLine("Осень");
             }
