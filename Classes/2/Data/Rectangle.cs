@@ -21,7 +21,7 @@ namespace _2.Data
         }
         double PerimeterCalculator()
         {
-            return side1 + side2;
+            return 2*(side1 + side2);
         }
         public double Area
         {
