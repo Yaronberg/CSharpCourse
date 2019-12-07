@@ -19,13 +19,13 @@ namespace _7
         }
         public void Salary(string position, int experience)
         {
-            switch (position)//.ToLower()
+            switch (position.ToLower())
             {
                 case "junior":
                     salary = 600;
                     break;
                 case "middle":
-                    salary = 1300.0;
+                    salary = 1300;
                     break;
                 case "senior":
                     salary = 2100;
