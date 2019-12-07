@@ -8,9 +8,10 @@ namespace _4.Data
 {
     class Point
     {
-        int x;
-        int y;
-        string name;
+        private int x;
+        private int y;
+        private string name;
+
         public string Name { get => name; }
         public int X { get => x; }
         public int Y { get => y; }
