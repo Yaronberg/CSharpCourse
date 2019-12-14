@@ -6,7 +6,7 @@ namespace _4
 {
     class ExpertDocumentWorker : ProDocumentWorker
     {
-        public override void EditDocument()
+        public override void SaveDocument()
         {
             Console.WriteLine("Документ сохранен в новом формате");
         }
