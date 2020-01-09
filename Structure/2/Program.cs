@@ -30,14 +30,15 @@ namespace _2
             {
                 int num = Convert.ToInt32(Console.ReadLine()); //номер поезда введен с клавиатуры
                 Train q = trains.FirstOrDefault(x => x.trainNumber == num); //поиск структуры по номеру поезда
-                if ((object)q == default) 
-                {
-                    Console.WriteLine("Такого номера поезда нет, попробуйте другой номер");
-                }
-                else
+                
+                if (q.trainNumber == num) 
                 {
                     q.Display();
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("Такого номера поезда нет, попробуйте другой номер");
                 }
             }
 
