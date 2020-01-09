@@ -9,27 +9,28 @@ namespace _2
         {
             Train[] trains = new Train[7];
 
-            for (int i = 0; i < trains.Length; i++) // ввод данных 
+            for (int i = 0; i < trains.Length + 1; i++) // ввод данных 
             {
-                Console.Write($"\nВведите номер поезда{i}:");
+                Console.Write($"Введите номер поезда{i}: ");
                 int trainNumber = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите пункт назначения:");
+                Console.Write("Введите пункт назначения: ");
                 string destination = Console.ReadLine();
-                Console.Write("Введите время отправления:");
+                Console.Write("Введите время отправления: ");
                 string time = Console.ReadLine();
+                Console.WriteLine();
 
                 trains[i] = new Train(trainNumber, destination, time);
             }
             
             Array.Sort(trains, (x, y) => x.trainNumber.CompareTo(y.trainNumber)); //сортировка массива по номеру поезда
 
-            Console.WriteLine("Введите номер поезда:");
+            Console.Write("Для поиска информации введите номер поезда: ");
 
             while (true) 
             {
-                int num = Convert.ToInt32(Console.ReadLine()); //номер поезда введен с клавиатуры 
+                int num = Convert.ToInt32(Console.ReadLine()); //номер поезда введен с клавиатуры
                 Train q = trains.FirstOrDefault(x => x.trainNumber == num); //поиск структуры по номеру поезда
-                if ((object)q == null) 
+                if ((object)q == default) 
                 {
                     Console.WriteLine("Такого номера поезда нет, попробуйте другой номер");
                 }
