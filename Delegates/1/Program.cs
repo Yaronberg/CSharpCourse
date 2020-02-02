@@ -16,6 +16,6 @@ namespace _1
             Console.ReadLine();
         }
 
-        delegate double MyDelegate(int a, int b, int c);
+        public delegate double MyDelegate(int a, int b, int c);
     }
 }
