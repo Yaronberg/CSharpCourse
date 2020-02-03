@@ -4,6 +4,7 @@ namespace _2
 {
     class Program
     {
+        public delegate double MyDelegate(int a, int b);
         static void Main(string[] args)
         {
             MyDelegate myDelegate;
@@ -12,15 +13,13 @@ namespace _2
             int b = 10;
             string calc = Convert.ToString(Console.ReadLine());
 
-            //MyDelegate Add = (a, b) => (a + b);
-
             myDelegate = calc switch
             {
                 "+" => (x, y) => (x + y),
                 "-" => (x, y) => (x - y),
                 "*" => (x, y) => (x * y),
                 "/" => (x, y) => ( y != 0 ? ((double) x / y) : -1 ),
-                _ => throw new ArgumentException(message: "invalid enum value"),
+                _ => throw new ArgumentException(message: "invalid value"),
             };
 
             Console.WriteLine(myDelegate(a, b));
@@ -28,6 +27,6 @@ namespace _2
             Console.ReadKey();
         }
 
-        public delegate double MyDelegate(int a, int b);
+
     }
 }

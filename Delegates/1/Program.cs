@@ -4,6 +4,8 @@ namespace _1
 {
     class Program
     {
+        public delegate double MyDelegate(int a, int b, int c);
+
         static void Main(string[] args)
         {
             int a = 5;
@@ -15,7 +17,5 @@ namespace _1
 
             Console.ReadLine();
         }
-
-        public delegate double MyDelegate(int a, int b, int c);
     }
 }
