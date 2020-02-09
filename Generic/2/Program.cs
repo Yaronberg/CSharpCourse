@@ -12,9 +12,6 @@ namespace _2
             myList.Add(3.4);
 
             Console.WriteLine(myList.Count);
-
-            var elem = myList.GetItem(1);
-            Console.WriteLine(elem);
             Console.WriteLine(myList[2]);
 
             Console.ReadLine();
@@ -49,10 +46,5 @@ namespace _2
             data = newData;
         }
         
-        public T GetItem(int index)
-        {
-            return data[index - 1];
-        }
-
     }
 }
