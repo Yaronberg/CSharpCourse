@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace _3
 {
@@ -7,59 +9,72 @@ namespace _3
         static void Main(string[] args)
         {
 
-            var dictionary = new MyDictionary<string, double>(5);
+            MyDictionary<int, string> dictionary = new MyDictionary<int, string>();
 
-            for (int i = 0; i < dictionary.Lenght - 1; i++)
-            {
-                dictionary.Add(i, "Рост", 150+i );
-            }
+            dictionary.Add(0, "Ноль");
+            dictionary.Add(1, "Целковый");
+            dictionary.Add(2, "чекушка");
 
-            for (int i = 0; i < dictionary.Lenght - 1; i++)
-            {
-                Console.WriteLine(dictionary[i]);
-            }
+            //
+            //Console.WriteLine(dictionary[2]);
 
-            Console.WriteLine(dictionary[1]);
-
-            Console.WriteLine(dictionary.Lenght);
+            Console.WriteLine(dictionary.Count); 
+            Console.WriteLine(dictionary.Count + " " + dictionary[2]);
 
             Console.ReadKey();
         }
 
     }
-    class MyDictionary<TKey, TValue>
+    class MyDictionary<TKey, TValue> : IMyDictionary<TKey, TValue>
     {
         private TKey[] key;
         private TValue[] value;
-        private readonly int lenght;
 
-        public int Lenght
+        public int Count
         {
             get
             {
-                return lenght;
+                return key.Length;
             }
         }
 
-        public MyDictionary(int size)
+        public MyDictionary()
         {
-            key = new TKey[size - 1];
-            value = new TValue[size - 1];
-            lenght = size;
+            key = new TKey[0];
+            value = new TValue[0];
         }
 
-        public (TKey key, TValue value) this[int i]
+        public TValue this[TKey index]
         {
             get
             {
-                return (key[i], value[i]);
+                for (int i = 0; i < key.Length; i++)
+                {
+                    if (key[i].Equals(index))
+                    {
+                        return value[i];
+                    }
+                }
+                throw new System.Collections.Generic.KeyNotFoundException();
             }
         }
 
-        public void Add(int i, TKey k, TValue v)
+        public void Add(TKey k, TValue v)
         {
-            key[i] = k;
-            value[i] = v;
+            TKey[] newKey = new TKey[key.Length + 1];
+            TValue[] newValue = new TValue[value.Length + 1];
+
+            for (int i = 0; i < key.Length - 1; i++)
+            {
+                newKey[i] = key[i];
+                newValue[i] = value[i];
+            }
+
+            newKey[newKey.Length - 1] = k;
+            newValue[newValue.Length - 1] = v;
+
+            key = newKey;
+            value = newValue;
         }
 
     }
