@@ -17,7 +17,7 @@ namespace _2
             Console.ReadLine();
         }
     }
-    class MyList<T>
+    class MyList<T> : IMyList<T>
     {
         T[] data;
 
