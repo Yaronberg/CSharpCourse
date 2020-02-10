@@ -15,10 +15,6 @@ namespace _3
             dictionary.Add(1, "Целковый");
             dictionary.Add(2, "чекушка");
 
-            //
-            //Console.WriteLine(dictionary[2]);
-
-            Console.WriteLine(dictionary.Count); 
             Console.WriteLine(dictionary.Count + " " + dictionary[2]);
 
             Console.ReadKey();
