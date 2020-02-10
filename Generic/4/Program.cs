@@ -1,20 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace _2
+namespace _4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MyList<double> myList = new MyList<double>();
+            var myList = new MyList<int>();
 
-            myList.Add(1.2);
-            myList.Add(3.4);
+            myList.Add(100);
+            myList.Add(200);
 
-            Console.WriteLine(myList.Count);
-            Console.WriteLine(myList[2]);
+            var myListArr = myList.GetArray();
 
+            foreach (var item in myListArr)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadLine();
+        }
+    }
+    static class MyListExtension
+    {
+        public static T[] GetArray<T>(this MyList<T> list)
+        {
+            T[] newArr = new T[list.Count];
+            for (int i = 0; i < newArr.Length; i++)
+            {
+                newArr[i] = list[i];
+            }
+            return newArr;
         }
     }
     class MyList<T> : IMyList<T>
@@ -45,6 +62,5 @@ namespace _2
             newData[data.Length] = item;
             data = newData;
         }
-        
     }
 }
