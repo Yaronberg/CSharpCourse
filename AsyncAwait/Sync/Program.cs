@@ -13,16 +13,16 @@ namespace sync
 
             var watch = new Stopwatch();
 
-            int fib1 = 32;
-            int fib2 = 33;
-            int fib3 = 34;
+            int fib1 = 38;
+            int fib2 = 39;
+            int fib3 = 40;
 
             int count = 10;
             for (int i = 0; i < count; i++)
             {
                 watch.Start();
 
-                FibonachiAsync2(fib1, fib2, fib3);
+                FibonachiSync(fib1, fib2, fib3);
 
                 watch.Stop();
 
@@ -35,7 +35,7 @@ namespace sync
             Console.ReadLine();
         }
 
-        static void FibonachiAsync2(int fib1, int fib2, int fib3)
+        static void FibonachiSync(int fib1, int fib2, int fib3)
         {
             Console.WriteLine(Fibonachi(fib2));
             Console.WriteLine(Fibonachi(fib3));

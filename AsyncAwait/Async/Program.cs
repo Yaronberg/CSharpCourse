@@ -14,9 +14,9 @@ namespace Async
 
             var watch = new Stopwatch();
 
-            int fib1 = 32;
-            int fib2 = 33;
-            int fib3 = 34;
+            int fib1 = 38;
+            int fib2 = 39;
+            int fib3 = 40;
 
             int count = 10;
             for (int i = 0; i < count; i++)
