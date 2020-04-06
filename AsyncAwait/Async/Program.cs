@@ -31,7 +31,7 @@ namespace Async
             }
 
             var avg = ((watch.ElapsedMilliseconds / 100.0)/count).ToString() + " ms";
-            Console.WriteLine(avg);
+            Console.WriteLine("Async: " + avg);
             
             Console.ReadLine();
         }

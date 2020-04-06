@@ -2,14 +2,14 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace Async
+namespace sync
 {
     class Program
     {
         static void Main(string[] args)
         {
             Thread.Sleep(3000);
-            Console.WriteLine("Let's get the fibonacci numbers async");
+            Console.WriteLine("Let's get the fibonacci numbers sync");
 
             var watch = new Stopwatch();
 
@@ -30,7 +30,7 @@ namespace Async
             }
 
             var avg = ((watch.ElapsedMilliseconds / 100.0) / count).ToString() + " ms";
-            Console.WriteLine(avg);
+            Console.WriteLine("Sync: " + avg);
 
             Console.ReadLine();
         }
